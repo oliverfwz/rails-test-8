@@ -1,10 +1,11 @@
 doctype html
 html
   head
-    title
-      | RailsTest8
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
+    = render 'layouts/header'
   body
-    = yield
+    #container
+      header
+        = render 'layouts/menu'
+      main
+        = yield
+      = render 'layouts/message'
