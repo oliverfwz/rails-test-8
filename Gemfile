@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem "paperclip", "~> 4.3"
 gem 'slim'
+gem 'simple_form'
 gem 'bootstrap_flash_messages'
 
 group :development, :test do
