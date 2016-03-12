@@ -2,3 +2,8 @@
   .container
     h2 = @post.title
     .content = simple_format @post.content
+    .comments
+      h3 Comments
+      .comments-inner
+        - @comments.each do |comment|
+          = render partial: "post_comments/comment", locals: { comment: comment }

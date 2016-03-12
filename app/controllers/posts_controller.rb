@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def show
     @post = Post.find(post_id)
+    @comments = @post.post_comments.order(id: :desc)
   end
 
   private
