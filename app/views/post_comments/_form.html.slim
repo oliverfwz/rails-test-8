@@ -1,0 +1,6 @@
+.post_comments-form-container
+  = simple_form_for PostComment.new, remote: true do |f|
+    = f.input :message
+    = f.hidden_field :post_id, value: post.id
+    = f.hidden_field :user_id, value: current_user.try(:id)
+    = f.submit 'Add', class: "btn btn-primary"

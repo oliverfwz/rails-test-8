@@ -1,0 +1,10 @@
+<% if @comment.present? %>
+  $("#posts-show-container .comments-inner").prepend("<%= escape_javascript(render partial: 'post_comments/comment', locals: { comment: @comment }) %>")
+  document.getElementById("post_comment_message").value = "";
+<% else %>
+  BootstrapDialog.show({
+    title: "Message",
+    message: "Please insert your message.",
+    type: BootstrapDialog.TYPE_DEFAULT
+  });
+<% end %>
