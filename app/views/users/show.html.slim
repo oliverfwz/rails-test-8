@@ -1,0 +1,15 @@
+#users-show-container
+  .container
+    .email
+      label Email:
+      span = @user.email
+    .name
+      label Name:
+      span = @user.name
+    .comments
+      h3 Comments
+      .comments-inner
+        - @comments.each do |comment|
+          = render partial: "comments/comment", locals: { comment: comment }
+    .new-comment
+      = render partial: "comments/form", locals: { post: nil, user: @user }
