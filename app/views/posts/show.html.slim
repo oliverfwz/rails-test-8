@@ -1,11 +1,13 @@
 #posts-show-container
   .container
-    h2 = @post.title
+    .title
+      h2 = @post.title
     .content = simple_format @post.content
     .comments
       h3 Comments
       .comments-inner
         - @comments.each do |comment|
           = render partial: "comments/comment", locals: { comment: comment }
-    .new-comment
-      = render partial: "comments/form", locals: { object: @post }
+    - if user_signed_in?
+      .new-comment
+        = render partial: "comments/form", locals: { object: @post }

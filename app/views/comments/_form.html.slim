@@ -1,5 +1,8 @@
-.comments-form-container
-  = simple_form_for [object, Comment.new], remote: true do |f|
-    = f.input :message
-    = f.hidden_field :user_id, value: current_user.try(:id)
-    = f.submit 'Add', class: "btn btn-primary"
+.row
+  .col-lg-2.col-md-3.col-sm-4
+  .col-lg-10.col-md-9.col-sm-8
+    .comments-form-container
+      = simple_form_for [object, Comment.new], remote: true do |f|
+        = f.input :message, label: false, placeholder: 'Enter your comment here!'
+        = f.hidden_field :user_id, value: current_user.try(:id)
+        = f.submit 'Send', class: "btn btn-primary"

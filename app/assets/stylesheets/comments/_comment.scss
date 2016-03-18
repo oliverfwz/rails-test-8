@@ -1,0 +1,22 @@
+.comments-comment-container {
+  padding-bottom: 20px;
+
+  .avatar {
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+  }
+
+  .messages {
+    min-height: 100px;
+    background-color: #f7f7f7;
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+
+    .content {
+      padding: 10px;
+    }
+  }
+}

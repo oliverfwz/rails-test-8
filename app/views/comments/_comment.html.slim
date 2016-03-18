@@ -1,5 +1,8 @@
 .comments-comment-container
-  .user
-    .avatar
-  .messages
-    .cotent = simple_format comment.message
+  .row
+    .col-lg-2.col-md-3.col-sm-4
+      .avatar
+        = link_to (image_tag comment.user.avatar.url(:thumb)), user_path(comment.user)
+    .col-lg-10.col-md-9.col-sm-8
+      .messages
+        .content = simple_format comment.message

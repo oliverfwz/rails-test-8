@@ -1,11 +1,16 @@
 #users-show-container
   .container
-    .email
-      label Email:
-      span = @user.email
-    .name
-      label Name:
-      span = @user.name
+    .info.row
+      .col-lg-3.col-md-4.col-sm-5
+        .avatar
+          = image_tag @user.avatar.url(:thumb)
+      .col-lg-9.col-md-8.col-sm-7
+        .email
+          label Email:
+          span = @user.email
+        .name
+          label Name:
+          span = @user.name
     .comments
       h3 Comments
       .comments-inner
