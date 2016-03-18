@@ -1,5 +1,5 @@
 <% if @result.present? %>
-  $("#posts-show-container .comments-inner").prepend("<%= escape_javascript(render partial: 'comments/comment', locals: { comment: @result }) %>")
+  $(".comments-inner").prepend("<%= escape_javascript(render partial: 'comments/comment', locals: { comment: @result }) %>")
   document.getElementById("comment_message").value = "";
 <% else %>
   BootstrapDialog.show({
